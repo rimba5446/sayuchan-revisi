@@ -19,13 +19,5 @@ module.exports = new Event("messageCreate", (client, message) => {
 
 	args.splice(0, 1);
 	command.run(message, args, client, false).then( () => {
-		// Webplayer Auto-Update
-		if( !client.hasWebplayer ) return;
-
-		["stop", "loop", "clear", "pause", "play", "remove", "resume", "seek"].forEach( (cn) => {
-			if(cn == command.name){
-				client.io.to(message.guild.id).emit("forceUpdate", {from: "messageCreate-"+command.name});
-			}
-		})
 	});
 });

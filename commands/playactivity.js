@@ -14,7 +14,7 @@ module.exports = new Command({
 		.addComponents(
 			new SelectMenuBuilder()
 				.setCustomId('playactivity')
-				.setPlaceholder('Choose an games')
+				.setPlaceholder('Choose an activity')
 				.setMinValues(1)
 				.setMaxValues(1)
 				.addOptions([

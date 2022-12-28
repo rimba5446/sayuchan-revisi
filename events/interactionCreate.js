@@ -13,8 +13,8 @@ module.exports = new Event("interactionCreate", async (client, interaction) => {
         const command = client.commands.find(cmd => cmd.name.toLowerCase() == interaction.commandName);
         if (!command) return;
 
-        if (!interaction.member.permissionsIn(interaction.channel).has(command.permission))
-            return interaction.reply("You don't have permission to run this command!");
+        // if (!interaction.member.permissionsIn(interaction.channel).has(command.permission))
+        //     return interaction.reply("You don't have permission to run this command!");
 
         const args = interaction.options._hoistedOptions.map(option => option.value);
     
